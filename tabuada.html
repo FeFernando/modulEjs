@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabudada</title>
+</head>
+
+<body>
+    <h1>Tabuada</h1>
+
+    <br>
+    <div class="numero">
+        <p>Numero:</p>
+        <Input type="number" id="n"></Input>
+        <input type="button" value="Gerar Tabuada" onclick="gerarTabuada()">
+    </div>
+
+    <textarea name="" id="textarea" cols="30" rows="10" style="margin-top: 100px;"></textarea>
+
+
+    <script>
+
+
+        function gerarTabuada() {
+            var n = document.getElementById('n').value;
+            var textarea = document.getElementById('textarea')
+            textarea.value = '';
+
+
+            for (let i = 1; i <= 10; i++) {
+                textarea.value += `${n} * ${i} = ${n * i}\n`
+
+
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
