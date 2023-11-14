@@ -23,10 +23,17 @@
             var interval = parseInt(document.getElementById('intervalo').value);
             var res = document.getElementById('res');
 
-            //ao invés de usar o i++ no final como é de costume usamos i += interval
-            for (let i = begin; i <= end; i += interval) {
-                res.innerHTML += i + '---'
+            if (begin < end) {
+                //ao invés de usar o i++ no final como é de costume usamos i += interval
+                for (let i = begin; i <= end; i += interval) {
+                    res.innerHTML += i + '---'
+                }
+            } else {
+                for (let i = begin; i >= end ; i -= interval){
+                   res.innerHTML += i + '---'
+                }
             }
+
             //limpa os campos após o start
             document.getElementById('inicio').value = '';
             document.getElementById('fim').value = '';
