@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Intervalo</h1>
+
+    <p>Inicio <input type="number" id="inicio"></p>
+    <p>Fim <input type="number" id="fim"></p>
+    <p>Intervalo <input type="number" name="" id="intervalo"></p>
+    <input type="button" value="Contar" onclick="start()">
+    <dv id="res"></dv>
+    <script>
+
+        function start() {
+            var begin = parseInt(document.getElementById('inicio').value);
+            var end = parseInt(document.getElementById('fim').value);
+            var interval = parseInt(document.getElementById('intervalo').value);
+            var res = document.getElementById('res');
+
+            //ao invés de usar o i++ no final como é de costume usamos i += interval
+            for (let i = begin; i <= end; i += interval) {
+                res.innerHTML += i + '---'
+            }
+            //limpa os campos após o start
+            document.getElementById('inicio').value = '';
+            document.getElementById('fim').value = '';
+            document.getElementById('intervalo').value = '';
+        }
+
+    </script>
+</body>
+
+</html>
